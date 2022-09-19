@@ -1,0 +1,26 @@
+<div class="list-row">
+  <div class="col-md-4">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Search by title" [(ngModel)]="title" />
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" (click)="searchTitle()">Search</button>
+      </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div *ngFor="let se of series" class="card mx-4 my-4" style="width: 18rem;">
+      <!-- <img src={{char.image}} class="card-img-top" alt="..."> -->
+      <div class="card-body">
+        <h5 class="card-title">{{se.title}}</h5>
+        <hr>
+        <h5 class="card-title">ID: {{se.id}}</h5>
+        <h5 class="card-title">Original title: {{se.original_name}}</h5>
+        <h5 class="card-title">Género: {{se.overview}}</h5>
+        <h5 class="card-title">Género: {{se.first_air_date}}</h5>
+        <a class="btn btn-primary" routerLink="/info_movie/{{se.id}}">More info</a>
+      </div>
+    </div>
+  </div>
+</div>
